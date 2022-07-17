@@ -1,0 +1,17 @@
+<html>
+    <head>
+        {% if title %}
+        <title>Django class- {{title }}</title>
+        {% else %}
+        <title>Django Bio</title>
+        {% endif %}
+    </head>
+    <body>
+        <a href="{%url 'bio-home'%}">Home</a>
+        <a href="{%url 'bio-about'%}">About</a>
+        <hr color="blue">
+        {% block content %}
+        {% endblock content%}
+    </body>
+</html>
+

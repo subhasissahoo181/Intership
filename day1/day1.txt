@@ -1,0 +1,65 @@
+<!doctype.html>
+
+
+<----------------tag----------------->
+<html>
+header
+body
+h1-h6
+p
+br
+sub & sup
+markdown
+abbr
+del
+insert
+block
+<------------assignment------------------->
+assignments:1
+title:- Training Program 
+Body- heading of level 2 - Topics (underlined)
+next line-
+1.HTML
+2.CSS
+3.JAVASCRIPT
+<------------------------>
+<a>
+Absolute URls
+Relative URls
+<-------assignement--------->
+create a back button user click then control go back up
+
+insert an image in to your web page and when user click it the google is open
+
+day-2
+list of course  
+11 python with Django 
+introduction to Python 
+introduction to Django 
+loop in python 
+condition statement 
+
+<-----------------day3-------------->
+html form 
+username:textfiled
+password:passwordfiel
+retype password
+date of birthday :date field
+gender  :radio btn 
+subject 3 name checkbox
+drop down:country any 4
+
+day4
+create a table like  
+<---------------day 5------>
+write a code that except a number from user and check it is even or odd 
+
+change this function to add 2number fields
+
+<!-- wrt a js code to create like a ask user to enter no. of rows and print them8
+*
+** 
+*** 
+**** 
+****  
+02) Create a form with some field like a table -->

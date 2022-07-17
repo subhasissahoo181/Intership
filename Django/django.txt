@@ -1,0 +1,13 @@
+to create a vertual envairement:-(python -m venv <<name of vertual envairement>)
+for de activate is (deactivate p1)
+
+install django(pip install django.)
+start a project (django-admin startproject <projectname>)
+inside this a directory manage.py & Projectname.
+__init__.py(it represent it is an empty file.)
+setting.pu(it contains all website seting(css,js, location, db all are))
+urls.py(it define the url to view mapping)
+wsgi.py(it will use if our web application with synchronous way)
+asgi.py(it will use if our web application with asynchronous way.)
+
+python manage.py startapp blog

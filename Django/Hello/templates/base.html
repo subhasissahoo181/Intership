@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="static/img/logo.png">
+    <title>{% block title %} {% endblock title %} |Agriculture Department Govt. Of Uttarakhand</title>
+    <!-- <link rel="stylesheet" href="farming.css"> -->
+    <!-- <link rel="stylesheet" href="farming2.css"> -->
+<style>
+    *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins', sans-serif;
+}
+.container{
+    width: 100%;
+    height: 100vh;
+    /* background-image: url(static/img/farming.jpg); */
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ }
+ 
+nav{
+    width: 100%;
+    padding: 10px 8%;
+    /* position: absolute; */
+    top: 0;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* background: rgb(134, 196, 93); */
+    /* background-color: rgb(7, 117, 7); */
+    /* color: green; */
+    background-color: white;
+    border-bottom: 5px solid gray;
+    position: fixed;
+    
+}
+
+.logo{
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+}
+nav ul li{
+    list-style: none;
+    display: inline-block;
+    margin: 0 10px;
+    position: relative;
+    
+}
+nav ul  li a{
+    text-decoration: none;
+    /* color: #fff; */
+    /* color: rgb(255, 13, 13); */
+    color: rgb(2, 46, 2);
+    font-size: 13px;
+}
+nav ul  li a:hover{
+    /* color: orangered; */
+    color:white;
+    border: 5px solid green;
+    background: green;
+    border-radius:30px;
+
+}
+.dropdown{
+    display: none;
+}
+nav ul  li:hover .dropdown {
+    display:block;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    background-color: white;
+    display: block;
+}
+/* .container:hover .dropdown {
+    display:block;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    background-color: lightgreen;
+    display: block;
+} */
+.dropdown ul{
+    display: block;
+    margin: 10px;
+
+}
+
+
+.dropdown ul li{
+    width: 150px;
+    padding: 10px;
+}
+.text-box{
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+.text-box h1{
+    font-size: 70px;
+    /* top: 10px; */
+    /* color: #fff; */
+    color: rgba(255, 255, 255, 0.8);
+    
+    
+}
+.text-box button{
+    /* background: #037299; */
+    background: lightgreen;
+    border: 5px solid red;
+    /* color: #fff; */
+    color: red;
+    padding: 15px 30px;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 30px;
+    margin-top: 30px;
+
+}
+#area{
+    color: #fff;
+}
+
+
+.footer{
+    background: lightgreen;
+    /* display: flex; */
+}
+
+.footer .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+    gap:10rem;
+}
+
+.footer .box-container .box h3{
+    font-size: 2.2rem;
+    color:rgb(226, 58, 58);
+    padding:1rem 0;
+}
+
+.footer .box-container .box a{
+    font-size: 1rem;
+    color:rgb(224, 75, 75);
+    padding:1rem 0;
+    display: block;
+    text-decoration: none;
+}
+
+.footer .box-container .box a:hover{
+    color:var(--main-color);
+}
+
+.footer .box-container .box a i{
+    padding-right: .5rem;
+    color:var(--main-color);
+}
+
+.footer .box-container .box a:hover i{
+    padding-right: 2rem;
+    color:#fff;
+}
+
+.footer .credit{
+    padding:1rem;
+    padding-top: 2.5rem;
+    margin-top: 2.5rem;
+    border-top:.1rem solid rgba(15, 204, 56, 0.2);
+    font-size: 2rem;
+    color:rgb(202, 39, 39);
+    text-align: center;
+}
+
+.footer .credit span{
+    color:var(--main-color);
+}
+
+.footer span{
+    text-align: center;
+}
+
+
+#feature{
+    width: 100%;
+    padding: 70px 0;
+}
+.title-text{
+    text-align: center;
+    padding-bottom: 70px;
+}
+.title-text p{
+    margin: auto;
+    font-size: 20px;
+    color: #009688;
+    /* color: hotpink; */
+    font-weight: bold;
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+}
+.title-text p::after{
+    content: '';
+    width: 50px;
+    height: 35px;
+    /* background: linear-gradient(#ec76d9,rgb(40, 22, 143)); */
+    background: linear-gradient(#019587,#fff);
+    position: absolute;
+    top: -20px;
+    left: 0;
+    z-index: -1;
+    transform: rotate(10deg);
+    border-top-left-radius: 35px;
+    border-bottom-right-radius: 35px;
+}
+.title-text h1{
+    font-size: 50px;
+}
+.feature-box{
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    text-align: center;
+}
+.features{
+    flex-basis: 50%;
+}
+.features-img{
+    flex-basis: 50%;
+    margin: auto;
+}
+.features-img img{
+    width: 70%;
+    border-radius: 10px;
+}
+.features h1{
+ text-align: left;
+ margin-bottom: 10px;
+ font-weight: 100;
+ color: #009688;
+}
+.features-desc{
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+}
+.feature-icon .fa{
+    width: 50px;
+    height: 50px;
+    font-size: 30px;
+    line-height: 50px;
+    border-radius: 8px;
+    color: #009688;
+    border: 1px solid #009688;
+}
+.feature-text p{ 
+padding: 0 20px;
+text-align: initial;
+}
+
+.title-text #data{
+    margin: 10px 15%;
+    /* justify-content:center; */
+    /* text-justify: auto; */
+    text-align: justify;
+}
+@media screen and (max-width:770px){
+    .title-text h1{
+        font-size: 35px;
+    }
+    .features{
+        flex-basis: 100%;
+    }
+    .features-img{
+        flex-basis: 100%;
+    }
+    .features-img img{
+        width: 100%;
+        border-radius: 10px;
+        /* border-radius: 50%; */
+    }
+
+}
+
+/* -----------service---------- */
+#service{
+    width: 100%;
+    padding: 70px 0;
+    background: #efefef;
+}
+.service-box{
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: auto;
+}
+.single-service{
+    flex-basis: 48%;
+    text-align: center;
+    border-radius: 7px;
+    margin-bottom: 20px;
+    color: #fff;
+    position: relative;
+}
+.single-service img{
+    width: 100%;
+    border-radius: 7px;
+}
+.overlay{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    border-radius: 7px;
+    cursor: pointer;
+    background: linear-gradient(rgba(0,0,0,0.5),#50a318);
+    opacity: 0;
+    transition: 1s;
+}
+.single-service:hover .overlay{
+    opacity: 0.8;
+}
+.service-desc{
+    width: 80%;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    opacity: 0;
+    transition: 1s;
+    transform: translateX(-50%);
+}
+hr{
+    background: #fff;
+    height: 2px;
+    border: 0;
+    margin: 15px auto;
+    width: 60%;
+}
+.service-desc p{
+    font-size: 14px;
+}
+.single-service:hover .service-desc {
+bottom: 40%;
+opacity: 1;
+}
+@media screen and (max-width:770px){
+    .single-service{
+        flex-basis: 100%;
+        margin-bottom: 30px;
+    }
+    .service-desc p{
+        font-size: 12px;
+    }
+    hr{
+        margin: 5px auto;
+    }
+    .single-service:hover .service-desc {
+        bottom: 25%;
+        }
+}
+
+.row{
+    display: flex;
+    padding: 20px;
+    /* padding-top: 50px; */
+    /* margin-left: 30px; */
+    /* text-align:left; */
+    cursor: pointer;
+    /* justify-content: space-between; */
+    position: relative;
+    overflow: hidden;
+    
+}
+.facilities{
+    /* width: 40%; */
+    margin: auto;
+    text-align: center;
+    padding-top: 100px;
+    /* margin: 50px; */
+    /* display: flex; */
+    position: relative;
+      /* justify-content: space-between; */
+      /* position: relative;
+    overflow: hidden;
+       */
+}
+
+.facilities-col{
+    flex-basis: 31%;
+    border-radius: 10px;
+    margin-bottom: 5%;
+    text-align:left;
+    box-sizing: border-box;
+    display: block;
+      /* display: flex; */
+      /* justify-content: space-between; */
+      /* flex-basis: 31%; */
+
+  
+}
+.facilities-col img{
+    width: 150px;
+    /* margin:auto; */
+    border-radius: 10px;
+    /* position: absolute; */
+    position: relative;
+    margin: 30px;
+    /* justify-content: space-between; */
+    /* text-align: center; */
+    align-items:center;
+    
+}
+.facilities-col p{
+    padding: 0;
+    text-align: center;
+
+}
+.facilities-col h3{
+    margin-top:16px;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.facilities-col:hover{
+    /* background: lightgreen; */
+    /* border: 2px solid green; */
+    box-shadow: 2.5px 2.5px 9px rgb(179, 218, 179);
+}
+.text-img{
+    /* text-align: center; */
+    color: #1e4007;
+    margin-left:5px;
+    padding-left: 50px;
+    /* padding-right: 50px; */
+    padding-bottom: 0px;
+    /* align-items: right; */
+    height: 100%;
+    width: 100%;
+}
+#text-img{
+    color: #1e4007;
+    margin-left:5px;
+    padding-left: 40%;
+   
+    height: 100%;
+    width: 100%;
+}
+.demo{
+    /* padding:10px; */
+    margin-top:175px;
+     margin-right:100px;
+     /* height: 100%; */
+     /* width: 100%; */
+     /* background-size: cover; */
+     /* background-image: url(http://static/img/demo.jpg); */
+     /* background-color: green; */
+     margin-left: 100px;
+}
+.container{
+    background-color: whitesmoke;
+}
+.contacts{
+    display: flex;
+}
+/* /* .form-group{
+    padding: 10px;
+    text-align: center;
+    align-items: center;
+} */
+.btn{ 
+    /* width: 100px; */
+    /* /* height: 50px; */ 
+    padding: 5px;
+    margin-top:10px;
+    margin-left: 50%;
+    /* align-items: center; */
+    /* text-align: center; */
+    background-color:rgb(34, 110, 34);
+    color: #efefef;
+    border-radius:5px;
+}
+/* #text{
+    margin-left: 50px;
+} */
+</style>
+</head>
+<body>
+    <!-- <div class="container"> -->
+    <div id="area">
+    <nav><a href="index.html">
+        <img src="static/img/logo.png" class="logo">
+        </a>
+        
+        <ul>
+            <!--  <li><a href="farming.html">HOME</a></li>
+            <li><a href="#feature">INFORMATION</a>
+                <!--   SEEDS, CROPS, FERTILISER, SYSTEMATICAL FARMING- ->
+            </li>            
+            <li><a href="predict.html">PREDICT</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+            <li><a href="login.html">LOGIN</a></li> -->
+            <!-- <li><a href="contact.html">ASS</a></li> -->
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">services</a></li>
+            <li><a href="contact.html">contact</a></li>
+
+        </ul>
+    </nav>
+</div>
+/* <!-- {% if messages %}
+    {% for message in messages %}
+    <div class="alert alert-{{message.tags}}" role="alert">
+       <strong>{{ message}}</strong> 
+        <!-- <strong>Holy guacamole!</strong> You should  check in on some of those fields below.  -- >
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span arial-hidden="true">&times;</span>
+        </button>
+    </div>
+    {% endfor %}
+    {% endif %} --> * /
+
+    /* {% block body%} {% endblock body%} */
+    <!-- <div class="text-box">
+        <h1>
+            Agriculture Department of
+            Govt. <br>  Uttarakhand
+        </h1>
+            <!-- <a href="information.html"><button type="button">Explore More</button></a> - ->
+        
+    </div> -->
+    </div>
+<!-- about page -->
+    <div class="about">
+        <section id="feature">
+            <div class="title-text">
+                <p>INFORMATION</p>
+                <h1>ALL INFORMATION </h1>
+                <h4 id="data">Agriculture, with its allied sectors, is unquestionably the largest livelihood provider in India, more so in the vast rural areas. It also contributes a significant figure to the Gross Domestic Product (GDP). Sustainable agriculture, in terms of food security, rural employment, and environmentally sustainable technologies such as soil conservation, sustainable natural resource management and biodiversity protection, are essential for holistic rural development. Indian agriculture and allied activities have witnessed a green revolution, a white revolution, a yellow revolution and a blue revolution..</h4>
+            </div>
+
+            <div class="feature-box">
+                <div class="features">
+                    <h1>SEEDS</h1>
+                    <div class="features-desc">
+                        <div class="feature-icon">
+                            <i class="fa fa-shield"></i>
+                        </div>
+                        <div class="feature-text">
+                            <p>Donec eget ultricies sapi. Sed porttitor, mauris ater lob facilisis, elit sapie elit sapie eleifend ligula.</p>
+                        </div>
+
+                    </div>
+
+                    <h1>CROPS</h1>
+                    <div class="features-desc">
+                        <div class="feature-icon">
+                            <i class="fa fa-check-square-o"></i>
+                        </div>
+                        <div class="feature-text">
+                            <p>Donec eget ultricies sapi. Sed porttitor, mauris ater lob facilisis, elit sapie elit sapie eleifend ligula.</p>
+                        </div>
+
+                    </div>
+
+                    <h1>FERTILISER</h1>
+                    <div class="features-desc">
+                        <div class="feature-icon">
+                            <i class="fa fa-inr"></i>
+                        </div>
+                        <div class="feature-text">
+                            <p>Donec eget ultricies sapi. Sed porttitor, mauris ater lob facilisis, elit sapie elit sapie eleifend ligula.</p>
+                        </div>
+
+                    </div>
+
+                    <h1>SYSTEMATICAL FARMING</h1>
+                    <div class="features-desc">
+                        <div class="feature-icon">
+                            <i class="fa fa-inr"></i>
+                        </div>
+                        <div class="feature-text">
+                            <p>Donec eget ultricies sapi. Sed porttitor, mauris ater lob facilisis, elit sapie elit sapie eleifend ligula.</p>
+                        </div>
+
+                    </div>
+                </div>
+
+                
+                
+                <div class="features-img">
+                    <img src="static/img/silide1.jpg" >
+                    
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+
+    
+
+
+    <!-- footer section starts  -->
+
+    <div class="four">
+        <section class="facilities" id="facility">
+        <h1 class="">Our Facilities</h1>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+    
+        <div class="row">
+        
+            <div class="facilities-col" >
+                <a href="tools.html"class="text-img">
+                    <img src="static/img/farming.png">
+                </a>                
+                <h3 class="text-img">Systamatic farming</h3>
+                
+    
+            </div>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <div class="facilities-col">
+                <a href="tools.html"class="text-img">
+                    <img src="static/img/fertilizers.png">
+                </a>                
+                <h3 class="text-img">Fertilizers and manures</h3>
+            </div>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <div class="facilities-col" >
+                <a href="tools.html"class="text-img">
+                <img src="static/img/seeds.png" >
+                </a>
+                <h3 id="text-img">Seeds</h3>
+                
+                
+            </div>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <div class="facilities-col">
+                <a href="tools.html"class="text-img">
+                    <img src="static/img/tools.png">
+                
+                </a>
+                <h3 class="text-img">Tools and equipments</h3>
+                
+               
+                
+            </div>
+        </div>
+    </section>
+    </div>
+
+<section class="footer" id="footer">
+
+    <div class="box-container">
+
+        <!-- <div class="box" data-aos="fade-right">
+            <h3>our branches</h3>
+            <a href="#"> <i class="fas fa-map-marker-alt"></i> India </a>
+            <a href="#"> <i class="fas fa-map-marker-alt"></i> USA </a>
+            <a href="#"> <i class="fas fa-map-marker-alt"></i> Russia </a>
+            <a href="#"> <i class="fas fa-map-marker-alt"></i> France </a>
+            <a href="#"> <i class="fas fa-map-marker-alt"></i> Japan </a>
+        </div> -->
+
+        <div class="box" data-aos="fade-down">
+            <h3>quick links</h3>
+            <a href="farming.html"> <i class="fas fa-arrow-right"></i> home </a>
+            <a href="#feature"> <i class="fas fa-arrow-right"></i> information </a>
+            <a href="predict.html"> <i class="fas fa-arrow-right"></i> predict </a>
+            <a href="contact.html"> <i class="fas fa-arrow-right"></i> contact </a>
+            <a href="login.html"> <i class="fas fa-arrow-right"></i> login </a>
+            
+        </div>
+
+        <div class="box" data-aos="fade-up">
+            <h3>contact us</h3>
+            <a href="#"> <i class="fas fa-phone"></i> +765-689-6830 </a>
+            <a href="#"> <i class="fas fa-phone"></i> +91-7656896830 </a>
+            <a href="#"> <i class="fas fa-envelope"></i> sahoostore@gmail.com </a>
+            <a href="#"> <i class="fas fa-map-marker-alt"></i>  Uttarakhand, india - 759001 </a>
+        </div>
+
+        <div class="box" data-aos="fade-left">
+            <h3>contact us</h3>
+            <a href="#"> <i class="fab fa-facebook-f"></i> facebook </a>
+            <a href="#"> <i class="fab fa-twitter"></i> twitter </a>
+            <a href="#"> <i class="fab fa-instagram"></i> instagram </a>
+            <a href="#"> <i class="fab fa-linkedin"></i> linkedin </a>
+            <a href="#"> <i class="fab fa-pinterest"></i> pinterest </a>
+        </div>
+
+    </div>
+
+    <!-- <div class="credit"> created by <span>@SUBHASIS SAHOO</span> | all rights reserved </div> -->
+    <span>@Uttarakhand.Govt</span> | all rights reserved </div>
+
+</section>
+
+<!-- footer section ends -->
+
+    
+
+    <script>
+        var blurArea = document.getElementById("blur-area");
+
+        document.onmousemove = function(e){
+            blurArea.style.transform = `translate(${e.pageX}px, ${e.pageY}px)`;  
+        }
+    </script>
+</body>
+</html>

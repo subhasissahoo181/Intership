@@ -1,0 +1,53 @@
+ {% extends "base.html" %} 
+
+{% block title %}Contact{% endblock title %}
+{% block body %}
+
+
+ 
+<div class="contacts">
+    
+    
+    <div class="demo" >
+        <img src="static/img/demo.jpg" alt="farming" >           
+    </div>
+    <br>
+    <div class="container" >
+        
+            <form method="post" action="/contact">
+                {% csrf_token %}
+                <div class="form-group">
+                    <h1 class="text-center" >Contact us</h1>
+                    <br>
+                    <label for="name">Enter your Name.</label>
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name ">
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="email">Enter your Email.</label>
+                    <input type="text" class="form-control" id="email" name="email" placeholder="     xyz@gmail.com ">
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="phone">Phone Number . </label>
+                    <input type="text" class="form-control" id="phone" name="phone" placeholder="Enter your phone number. ">
+                </div>
+                <br>
+                <!-- <div class="form-group">
+                    <label for="name">Enter your Name.</label>
+                    <input type="text" class="form-control" id="name" placeholder="Enter your name ">
+                </div> -->
+                <textarea name="text" id="text" name="text" placeholder="Enter your text...."cols="40" rows="5"></textarea>
+                <br>
+                <button onclick="onfunc()" class="btn">Submit</button>
+            </form>
+            
+        </div>
+</div>
+
+
+
+
+    
+
+{% endblock body %} 

@@ -1,0 +1,27 @@
+first always create a vertual environment.{
+python -m venv (name of vertual environment)
+env1
+cd env1
+cd Script
+activate 
+cd..
+}
+
+now install Django{
+    pip install django
+}
+
+for update django{
+    pip install django --upgrade
+}
+to check the file directory{
+    tree (filename) /f
+}
+
+
+now we go manage.py after find this directory we create  our project
+
+
+assignmant
+
+create a project name proj2 inside it a application name students and when user use info/ ---->welcome to the Student registration...

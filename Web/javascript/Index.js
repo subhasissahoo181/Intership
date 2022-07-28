@@ -1,4 +1,4 @@
-//  console.log('Hello')
+ console.log('Hello')
 /*---------------------------variable-------------------*/ 
 //  Variables Can store some information
 //We can use that information later .
@@ -540,11 +540,14 @@ const fruits2=[];
 // const returnedValue = sumThreeNumbers(2,3,5);
 // console.log(returnValue);
 
-function isEven(number){
-    if(number % 2==0){
-        return true;
-    }else{
-        return false;
-    }
-}
-console.log(isEven(5));
+// function isEven(number){
+//     if(number % 2==0){
+//         return true;
+//     }else{
+//         return false;
+//     }
+// }
+// console.log(isEven(5));
+
+// console.log('hello')
+

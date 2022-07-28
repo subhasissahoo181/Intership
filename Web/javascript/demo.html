@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <style>
+            body{
+                background-color:white;
+                color: black;
+            }
+            .dark-mode{
+                background-color:black;
+                color: white;
+            }
+        </style>
+        <!-- <script>
+            function picSwap(){
+                document.getElementById("pic1").src="img.jpg";
+                document.getElementById("pic1").src="img.jpg";
+            }
+        </script> -->
+        <script>
+            var myClock = setInterval(showClock, 1000);
+            function showClock(){
+                var d= new Date();
+                myTime = d.toLocaleTimeString();
+                document.getElementById('h3').innerHTML=myTime;
+            }
+            function myFunction1(){
+                var x= document.getElementById('myDiv');
+            if(x.style.display=="none"){
+
+                x.style.display="block";
+            }
+            else{
+                x.style.display="none";
+            }
+            }
+            function myFunction(){
+                var element = document.body;
+                element.classList.toggle("dark-mode");
+            }
+            
+            
+        </script>
+    </head>
+    <body onLoad="showClock()">
+        <!-- <img src="" id="pic1" alt=""> -->
+        <div id="myDiv">
+            <h3 id="h3"></h3>
+        </div>
+        
+        <br>
+        <button onclick="myFunction1()">show/hide</button>
+        <br><br>
+        <button onclick="myFunction()">Toggle</button>
+    </body>
+</html>

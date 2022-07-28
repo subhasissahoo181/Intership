@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body{
+            background-color:white;
+            color: black;
+        }
+        .dark-mode{
+            background-color:black;
+            color: white;
+        }
+    </style>
+    
+    <!-- <script>
+        var myClock = setInterval(showClock, 1000);
+        function showClock(){
+            var d= new Date();
+            myTime = d.toLocaleTimeString();
+            document.getElementById('h3').innerHTML=myTime;
+        }
+    </script> -->
+    <script>
+        function myFunction(){
+            var element = document.body;
+            element.classList.toggle("dark-mode");
+        }
+    </script>
+</head>
+<!-- <body onLoad="showClock()">
+   
+    <!-- <h1>hello</h1> - ->
+    <h3 id="h3"></h3> -->
+   
+    <body>
+        <p>click it</p>
+        <button onclick="myFunction()">Toggle</button>
+    
+</body>
+</html>
